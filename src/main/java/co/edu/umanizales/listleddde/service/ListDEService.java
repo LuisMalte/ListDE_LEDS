@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 @Data
 public class ListDEService {
 
-    private ListDE leds;
+    private ListDE pets;
 
 
     public ListDEService() {
-        leds = new ListDE();
+        pets = new ListDE();
 
 
     }
