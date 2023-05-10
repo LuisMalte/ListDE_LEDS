@@ -6,16 +6,19 @@ import lombok.Data;
 import java.time.LocalTime;
 
 @Data
-@AllArgsConstructor
 public class Led {
 
-    private int  id ;
+    private String  id ;
     private boolean  state;
     private LocalTime dateOn;
     private LocalTime dateOff;
 
 
-
+public Led(String id)
+{
+    this.id = id;
+    state = false;
+}
 
 
 }
