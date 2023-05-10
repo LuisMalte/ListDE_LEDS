@@ -75,6 +75,23 @@ public class ListDEController {
     }
 
 
+    @GetMapping(path = "/onof")
+    public ResponseEntity<ResponseDTO> turnOnAndOff() throws InterruptedException {
+        listDEService.getLeds().turnOnAndOff();
+
+        return new ResponseEntity<>(new ResponseDTO(
+                200, "Se prendió y apago desde el medio", null), HttpStatus.OK);
+    }
+
+
+    @GetMapping(path = "/delete")
+    public ResponseEntity<ResponseDTO> delete()  {
+        listDEService.getLeds().delete();
+
+        return new ResponseEntity<>(new ResponseDTO(
+                200, "Se eliminaron todos los leds", null), HttpStatus.OK);
+    }
+
 
 
 }
