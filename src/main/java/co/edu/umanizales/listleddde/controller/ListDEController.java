@@ -80,7 +80,7 @@ public class ListDEController {
         listDEService.getLeds().turnOnAndOff();
 
         return new ResponseEntity<>(new ResponseDTO(
-                200, "Se prendió y apago desde el medio", null), HttpStatus.OK);
+                200, "Se prendió y apago los leds desde el medio", null), HttpStatus.OK);
     }
 
 
