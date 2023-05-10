@@ -76,7 +76,7 @@ public class ListDEController {
 
 
     @GetMapping(path = "/onof")
-    public ResponseEntity<ResponseDTO> turnOnAndOff() throws InterruptedException {
+    public ResponseEntity<ResponseDTO> turnOnAndOff() {
         listDEService.getLeds().turnOnAndOff();
 
         return new ResponseEntity<>(new ResponseDTO(

@@ -121,6 +121,37 @@ import java.util.List;
 
         }
 
+        /*Reviso si la lista no está vacía.
+Creo una variable llamada "temp" y la igualo a "head". También creo e inicializo un contador llamado "count" con el valor 1.
+Además, creo una variable llamada "start" que me ayudará a encontrar la mitad de la lista.
+Luego, verifico si la lista es par o impar. Si es impar, asigno a "start" el valor de (size / 2) + 1 para tener el elemento del medio.
+A continuación, recorro la lista mientras "temp" no sea nulo.
+Dentro del bucle, verifico si el contador es igual a "start". Si no lo es, incremento el contador en 1 y paso al siguiente nodo.
+Si el contador es igual a "start", creo otro nodo llamado "tempNext" y lo igualo a "temp". Esto lo hago para tener un nodo que avance hacia atrás y otro hacia adelante.
+Luego, enciendo el nodo "temp" y le asigno la hora actual como su fecha de encendido.
+Dentro del mismo "if", recorro la lista mientras "tempNext" tenga un siguiente nodo distinto de nulo. Esto es para asegurarme de que los extremos queden encendidos.
+Dentro de este bucle, utilizo Thread.sleep(1000) para pausar durante un segundo.
+Apago los dos nodos, "temp" y "tempNext", y les asigno la hora actual como su fecha de apagado.
+Después de eso, muevo "temp" al nodo anterior y "tempNext" al siguiente nodo. Logrando asi que un “temp” vaya adelante y otro atrás
+Enciendo estos nuevos nodos "temp" y "tempNext" y les asigno la hora actual como su fecha de encendido.
+Una vez que salgo del bucle, detengo la iteración ya que se cumple la condición si el contador es igual a "start", ya que no tendría sentido seguir recorriendo la lista
+
+
+En caso de la lista no sea impar
+Haya “start” dividiendo por 2
+Recorro el bulce mientras temp  no sea nulo
+Dentro del bucle, verifico si el contador es igual a "start". Si no lo es, incremento el contador en 1 y paso al siguiente nodo.
+Si el contador es igual a "start", creo otro nodo llamado "tempNext" y lo igualo a "temp.getNext". Esto lo hago  para  que tempNext tome el valor siguiente de mi temp y asi tener dos medios y tengan los mismos tiempos de apagado y prendido. Luego uno ira para atrás y el otro para adelante
+Luego, enciendo los  nodos  "temp" y  “tempNext ” y les asigno la hora actual como su fecha de encendido.
+Dentro del mismo "if", recorro la lista mientras "tempNext" tenga un siguiente nodo distinto de nulo. Esto es para asegurarme de que los extremos queden encendidos.
+
+Dentro de este bucle, utilizo Thread.sleep(1000) para pausar durante un segundo.
+Apago los dos nodos, "temp" y "tempNext", y les asigno la hora actual como su fecha de apagado.
+ Después de eso, muevo "temp" al nodo anterior y "tempNext" al siguiente nodo. Logrando asi que un temp vaya adelante y otro atrás
+Enciendo estos nuevos nodos "temp" y "tempNext" y les asigno la hora actual como su fecha de encendido.
+Una vez que salgo del bucle, detengo la iteración ya que se cumple la condición si el contador es igual a "start", ya que no tendría sentido seguir recorriendo la lista.
+*/
+
         public  void turnOnAndOff(){
             if (head != null) {
                 NodeDE temp = head;
@@ -159,6 +190,7 @@ import java.util.List;
 
 
                             }
+                            break;
 
                         }
                         count++;
