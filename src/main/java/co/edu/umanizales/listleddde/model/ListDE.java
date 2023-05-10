@@ -238,6 +238,7 @@ Una vez que salgo del bucle, detengo la iteración ya que se cumple la condició
 
 
                             }
+                            break;
                         }
                         count++;
                         temp= temp.getNext();
