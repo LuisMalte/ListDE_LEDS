@@ -56,6 +56,7 @@ import java.util.List;
         }
 
         public void turnOn() {
+            if (head != null) {
             NodeDE temp= head;
             while (temp != null) {
 
@@ -66,11 +67,12 @@ import java.util.List;
 
                 temp = temp.getNext();
 
-            }
+            }}
 
 
         }
         public void turnOff() {
+            if (head != null) {
             NodeDE temp= head;
             while (temp != null) {
 
@@ -82,11 +84,13 @@ import java.util.List;
                 temp = temp.getNext();
 
             }
+            }
 
 
         }
 
         public void restart() {
+            if (head != null) {
             NodeDE temp= head;
             while (temp != null) {
                     temp.getData().setState(false);
@@ -96,18 +100,107 @@ import java.util.List;
                 temp = temp.getNext();
 
             }
+            }
 
 
         }
 
+        public  void turnOnAndOff(){
+            if (head != null) {
+                NodeDE temp = head;
+                int count = 1;
+                int start=0;
+                if ((size%2)==0){
+
+                     start = size/2;
+
+                    while (temp!= null){
+                        if (count == start){
+                            NodeDE tempNext = temp.getNext();
+                            temp.getData().setState(true);
+                            temp.getData().setDateOn(LocalTime.from(LocalDateTime.now()));
+                            tempNext.getData().setState(true);
+                            tempNext.getData().setDateOn(LocalTime.from(LocalDateTime.now()));
+
+                            while (tempNext.getNext() != null){
+
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+
+                                temp.getData().setState(false);
+                                temp.getData().setDateOff(LocalTime.from(LocalDateTime.now()));
+                                tempNext.getData().setState(false);
+                                tempNext.getData().setDateOff(LocalTime.from(LocalDateTime.now()));
+
+                                temp = temp.getPrevious();
+                                tempNext= tempNext.getNext();
+
+                                temp.getData().setState(true);
+                                temp.getData().setDateOn(LocalTime.from(LocalDateTime.now()));
+                                tempNext.getData().setState(true);
+                                tempNext.getData().setDateOn(LocalTime.from(LocalDateTime.now()));
 
 
 
 
+                            }
+                        }
+                        count++;
+                        temp= temp.getNext();
+
+                    }
+
+                } else{
+                    start = (size / 2) + 1;
+                    while (temp!= null){
+
+                        if (count == start){
+                            NodeDE tempNext = temp;
+                            temp.getData().setState(true);
+                            temp.getData().setDateOn(LocalTime.from(LocalDateTime.now()));
+
+                            while (tempNext.getNext() != null){
+
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+
+                                temp.getData().setState(false);
+                                temp.getData().setDateOff(LocalTime.from(LocalDateTime.now()));
+                                tempNext.getData().setState(false);
+                                tempNext.getData().setDateOff(LocalTime.from(LocalDateTime.now()));
+
+                                temp = temp.getPrevious();
+                                tempNext= tempNext.getNext();
+
+                                temp.getData().setState(true);
+                                temp.getData().setDateOn(LocalTime.from(LocalDateTime.now()));
+                                tempNext.getData().setState(true);
+                                tempNext.getData().setDateOn(LocalTime.from(LocalDateTime.now()));
 
 
 
+                            }
+
+                        }
+                        count++;
+                        temp= temp.getNext();
+
+
+                    }
+
+                }
+
+            }
+
+        }
     }
+
 
 
 
