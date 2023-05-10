@@ -138,7 +138,7 @@ Una vez que salgo del bucle, detengo la iteración ya que se cumple la condició
 
 
 En caso de la lista no sea impar
-Haya “start” dividiendo por 2
+Hallo “start” dividiendo por 2
 Recorro el bulce mientras temp  no sea nulo
 Dentro del bucle, verifico si el contador es igual a "start". Si no lo es, incremento el contador en 1 y paso al siguiente nodo.
 Si el contador es igual a "start", creo otro nodo llamado "tempNext" y lo igualo a "temp.getNext". Esto lo hago  para  que tempNext tome el valor siguiente de mi temp y asi tener dos medios y tengan los mismos tiempos de apagado y prendido. Luego uno ira para atrás y el otro para adelante
